@@ -1,0 +1,21 @@
+module rca_tb();
+  reg [3:0]a,b;
+  reg cin;
+  wire [3:0]sum;
+  wire cout;
+  
+  rca r1(.sum(sum), .cout(cout), .a(a), .b(b), .cin(cin));
+  
+  initial 
+    begin
+      a=4'b0001;b=4'b0010;
+      cin=0;
+      
+      #2 a=4'b0101;b=4'b1010;
+      cin=0;
+      
+      #4 $finish;
+    end
+  initial
+  $monitor("time=%0t | a=%b b=%b cin=%b | sum=%b cout=%b",$time,a,b,cin,sum,cout);
+endmodule
