@@ -1,6 +1,6 @@
-module demux1_2(y2,y1,a,s);
+module demux1_2(y1,y2,a,s);
   input a,s;
-  output reg y2,y1;
+  output reg y1,y2;
   
   always @(*) begin
     if(s==1'b0)begin
